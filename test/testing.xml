@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FirstApplicationTest" verbose="1">
+    <test name="TestNG">
+        <!--<parameter name="browser" value="chrome" />-->
+        <!--<classes>-->
+            <!--<class name="Tests.SmokeTest" />-->
+            <!--<class name="Tests.MenuTests" />-->
+            <!--<class name="Tests.AuthorizationTests" />-->
+            <!--<class name="Tests.OnlineOrderTests" />-->
+        <!--</classes>-->
+        <packages>
+            <package name="com.epam.project.task01.*"/>
+        </packages>
+    </test>
+</suite>

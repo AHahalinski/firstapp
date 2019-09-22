@@ -4,6 +4,10 @@ package com.epam.project.task01.utils;
 public class ArrayUtil {
 
     public static double findMin(double[] array) {
+        if(array == null) {
+            return 0d;
+        }
+
         double minElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -15,6 +19,10 @@ public class ArrayUtil {
     }
 
     public static double findMax(double[] array) {
+        if(array == null) {
+            return 0d;
+        }
+
         double maxElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -26,6 +34,10 @@ public class ArrayUtil {
     }
 
     public static double sum(double[] array) {
+        if(array == null) {
+            return 0d;
+        }
+
         double sum = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -35,6 +47,10 @@ public class ArrayUtil {
     }
 
     public static double average(double[] array) {
+        if(array == null) {
+            return 0d;
+        }
+
         double value;
 
         int size = array.length;
@@ -43,15 +59,24 @@ public class ArrayUtil {
         return value;
     }
 
-    public static void replace(double[] array, double value) {
+    public static double[] replace(double[] array, double value) {
+        if(array == null) {
+            return null;
+        }
+
         for (int i = 0; i < array.length; i++) {
             if (array[i] < value) {
                 array[i] = value;
             }
         }
+        return array;
     }
 
-    public static void sortBubble(double[] array) {
+    public static double[] sortBubble(double[] array) {
+        if(array == null) {
+            return null;
+        }
+
         boolean isSorted = false;
         double temp;
         while (!isSorted) {
@@ -65,9 +90,14 @@ public class ArrayUtil {
                 }
             }
         }
+        return array;
     }
 
-    public static void sortShell(double[] array) {
+    public static double[] sortShell(double[] array) {
+        if(array == null) {
+            return null;
+        }
+
         double temp;
 
         for (int i = 0; i < array.length - 1; ) {
@@ -82,6 +112,7 @@ public class ArrayUtil {
                 i++;
             }
         }
+        return array;
     }
 
     public static double[] sortMerge(double[] array) {

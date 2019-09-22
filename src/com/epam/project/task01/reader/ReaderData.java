@@ -1,7 +1,7 @@
 package com.epam.project.task01.reader;
 
 import com.epam.project.task01.exception_handler.FileNotExistHandlerException;
-import com.epam.project.task01.exception_handler.PathFileIsNullException;
+import com.epam.project.task01.exception_handler.PathFileIsNullHandlerException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -12,11 +12,11 @@ import java.util.stream.Stream;
 
 public class ReaderData {
 
-    public static List<String> read(String path) throws PathFileIsNullException,
+    public static List<String> read(String path) throws PathFileIsNullHandlerException,
                                                         FileNotExistHandlerException,
                                                         IOException {
         if (path == null) {
-            throw new PathFileIsNullException();
+            throw new PathFileIsNullHandlerException();
         }
 
         File file = new File(path);

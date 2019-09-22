@@ -51,5 +51,6 @@ public class FirstApplication {
         double[] arrayDouble = CreaterArray.createFromFile(PATH);
         System.out.println("\n" + Arrays.toString(arrayDouble));
 
+
     }
 }

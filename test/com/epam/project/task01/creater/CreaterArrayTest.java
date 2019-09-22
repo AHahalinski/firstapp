@@ -2,7 +2,7 @@ package com.epam.project.task01.creater;
 
 import com.epam.project.task01.exception_handler.FileIsEmptyHandlerException;
 import com.epam.project.task01.exception_handler.FileNotExistHandlerException;
-import com.epam.project.task01.exception_handler.PathFileIsNullException;
+import com.epam.project.task01.exception_handler.PathFileIsNullHandlerException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,7 +29,7 @@ public class CreaterArrayTest {
         Assert.assertEquals(actualSize, expectedSize);
     }
 
-    @Test(expectedExceptions = PathFileIsNullException.class)
+    @Test(expectedExceptions = PathFileIsNullHandlerException.class)
     public void testCreateFromFileExceptionPathNull() {
         String pathNull = null;
         CREATER_ARRAY.createFromFile(pathNull);

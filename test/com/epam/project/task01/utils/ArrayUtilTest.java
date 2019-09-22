@@ -15,8 +15,7 @@ public class ArrayUtilTest {
         return new Object[][]{
                 {new double[]{0.1, -0.9, 9.3, 12.32, 0.0}, 12.32, -0.9, 20.82, 4.164, new double[]{-0.9, 0.0, 0.1, 9.3, 12.32}},
                 {new double[]{-8.1, -10.3, 10, 0.36, 10.08}, 10.08, -10.3, 2.04, 0.408, new double[]{-10.3, -8.1, 0.36, 10, 10.08}},
-                {new double[]{2.5, 5.3, -9.1}, 5.3, -9.1, -1.3, -0.433, new double[]{-9.1, 2.5, 5.3}},
-                {null, 0, 0, 0, 0, null}
+                {new double[]{2.5, 5.3, -9.1}, 5.3, -9.1, -1.3, -0.433, new double[]{-9.1, 2.5, 5.3}}
         };
     }
 
@@ -27,11 +26,21 @@ public class ArrayUtilTest {
         Assert.assertEquals(actualMin, expectedMin);
     }
 
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testFindMinNullPointerException() {
+        ARRAY_UTIL.findMin(null);
+    }
+
     @Test(dataProvider = "arrayTest")
     public void testFindMax(double[] array, double expectedMax, double expectedMin,
                             double expectedSum, double expectedAverage, double[] expectedSortedArray) {
         double actualMax = ARRAY_UTIL.findMax(array);
         Assert.assertEquals(actualMax, expectedMax);
+    }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testFindMaxNullPointerException() {
+        ARRAY_UTIL.findMax(null);
     }
 
     @Test(dataProvider = "arrayTest")
@@ -41,11 +50,21 @@ public class ArrayUtilTest {
         Assert.assertEquals(actualSum, expectedSum, 0.001);
     }
 
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testSumNullPointerException() {
+        ARRAY_UTIL.sum(null);
+    }
+
     @Test(dataProvider = "arrayTest")
     public void testAverage(double[] array, double expectedMax, double expectedMin,
                             double expectedSum, double expectedAverage, double[] expectedSortedArray) {
         double actualAverage = ARRAY_UTIL.average(array);
         Assert.assertEquals(actualAverage, expectedAverage, 0.001);
+    }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testAverageNullPointerException() {
+        ARRAY_UTIL.average(null);
     }
 
     @Test

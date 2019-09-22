@@ -4,10 +4,6 @@ package com.epam.project.task01.utils;
 public class ArrayUtil {
 
     public static double findMin(double[] array) {
-        if(array == null) {
-            return 0d;
-        }
-
         double minElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -19,10 +15,6 @@ public class ArrayUtil {
     }
 
     public static double findMax(double[] array) {
-        if(array == null) {
-            return 0d;
-        }
-
         double maxElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -34,10 +26,6 @@ public class ArrayUtil {
     }
 
     public static double sum(double[] array) {
-        if(array == null) {
-            return 0d;
-        }
-
         double sum = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -47,10 +35,6 @@ public class ArrayUtil {
     }
 
     public static double average(double[] array) {
-        if(array == null) {
-            return 0d;
-        }
-
         double value;
 
         int size = array.length;

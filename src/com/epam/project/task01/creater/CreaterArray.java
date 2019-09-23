@@ -1,5 +1,6 @@
 package com.epam.project.task01.creater;
 
+import com.epam.project.task01.parser.ParserDouble;
 import com.epam.project.task01.reader.ReaderData;
 import com.epam.project.task01.validator.ValidatorString;
 import com.epam.project.task01.exception_handler.FileNotExistHandlerException;
@@ -41,11 +42,8 @@ public class CreaterArray {
 
         for (String str : listAllData) {
             if(ValidatorString.checkValid(str)) {
-                String[] split = str.split(" ");
-                List<Double> tempList = Arrays.stream(split)
-                                              .map(element -> Double.parseDouble(element))
-                                              .collect(Collectors.toList());
-                listData.addAll(tempList);
+                List<Double> dataOneString = ParserDouble.parse(str);
+                listData.addAll(dataOneString);
             }
         }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class ReaderDataTest {
 
     private static final ReaderData READER_DATA = new ReaderData();
-    private static final String PATH_VALID = "D:\\_ПРОГРАММИРОВАНИЕ_\\EPAM\\firstapp\\test\\resources\\dataTestValid.txt";
+    private static final String PATH_VALID = "test/resources/dataTestValid.txt";
 
     @Test
     public void testReadSuccessful() throws IOException {
@@ -26,6 +26,6 @@ public class ReaderDataTest {
 
     @Test(expectedExceptions = FileNotExistHandlerException.class)
     public void testReadExceptionFileNotExistHandlerException() throws IOException {
-        READER_DATA.read("//fileNotExist.txt");
+        READER_DATA.read("test/resources/notExist.txt");
     }
 }

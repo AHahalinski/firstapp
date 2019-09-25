@@ -1,6 +1,6 @@
 package com.epam.project.task01.validator;
 
-public class ValidatorString {
+public class Validator {
 
     private static final String REGEX = "^([+-]?\\d+(\\.\\d+)?(d|D)?([ ]+|$))+$";
 

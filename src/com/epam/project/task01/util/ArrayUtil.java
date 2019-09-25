@@ -151,7 +151,7 @@ public class ArrayUtil {
 
     static void checkNull(double[] array) throws ArrayIsNullHandlerException{
         if (array == null) {
-            throw new ArrayIsNullHandlerException();
+            throw new ArrayIsNullHandlerException("NullPointerException");
         }
     }
 

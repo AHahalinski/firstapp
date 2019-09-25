@@ -4,11 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+public class ValidatorTest {
 
-public class ValidatorStringTest {
-
-    private static final ValidatorString VALIDATOR_STRING = new ValidatorString();
+    private static final Validator VALIDATOR_STRING = new Validator();
 
     @Test(dataProvider = "strings")
     public void testCheckValid(String string, boolean expectedResult) {

@@ -2,9 +2,22 @@ package com.epam.project.task01.exception;
 
 public class FileNotExistHandlerException extends RuntimeException {
 
-    private static final String MESSAGE = "File not exist ";
-
     public FileNotExistHandlerException() {
-        super(MESSAGE);
+    }
+
+    public FileNotExistHandlerException(String message) {
+        super(message);
+    }
+
+    public FileNotExistHandlerException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public FileNotExistHandlerException(Throwable cause) {
+        super(cause);
+    }
+
+    public FileNotExistHandlerException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
 }

@@ -10,8 +10,8 @@ public class CreaterArrayTest {
 
     private static final CreaterArray CREATER_ARRAY = new CreaterArray();
 
-    private static final String PATH_VALID = "D:\\_ПРОГРАММИРОВАНИЕ_\\EPAM\\firstapp\\test\\resources\\dataTestValid.txt";
-    private static final String PATH_EMPTY = "D:\\_ПРОГРАММИРОВАНИЕ_\\EPAM\\firstapp\\test\\resources\\dataTestEmpty.txt";
+    private static final String PATH_VALID = "test\\resources\\dataTestValid.txt";
+    private static final String PATH_EMPTY = "test\\resources\\dataTestEmpty.txt";
 
     @Test
     public void testCreateArrayRandomSizeTen() {
@@ -42,11 +42,11 @@ public class CreaterArrayTest {
 
     @Test(expectedExceptions = FileNotExistHandlerException.class)
     public void testCreateFromFileExceptionNotExist(){
-        CREATER_ARRAY.createFromFile("//fileNotExist.txt");
+        CREATER_ARRAY.createFromFile("test\\resources\\fileNotExist.txt");
     }
 
     @Test(expectedExceptions = FileNotExistHandlerException.class)
     public void testCreateFromFileExceptionIsNotFile(){
-        CREATER_ARRAY.createFromFile("D:\\_ПРОГРАММИРОВАНИЕ_\\EPAM\\firstapp\\test\\resources\\dataTestEmpty");
+        CREATER_ARRAY.createFromFile("test\\resources");
     }
 }

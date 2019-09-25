@@ -2,8 +2,7 @@ package com.epam.project.task01.creater;
 
 import com.epam.project.task01.parser.ParserDouble;
 import com.epam.project.task01.reader.ReaderData;
-import com.epam.project.task01.validator.ValidatorString;
-import com.epam.project.task01.exception.FileNotExistHandlerException;
+import com.epam.project.task01.validator.Validator;
 import com.epam.project.task01.exception.FileIsEmptyHandlerException;
 
 import java.io.IOException;
@@ -26,21 +25,16 @@ public class CreaterArray {
     }
 
     public static double[] createFromFile(String path) throws FileIsEmptyHandlerException {
-        List<String> listAllData = null;
-        try {
-            listAllData = ReaderData.read(path);
-        } catch (IOException e) {
-            throw new FileNotExistHandlerException();
-        }
+        List<String> listAllData = ReaderData.read(path);
 
         if (listAllData == null || listAllData.isEmpty()) {
-            throw new FileIsEmptyHandlerException();
+            throw new FileIsEmptyHandlerException("File is empty or");
         }
 
         List<Double> listData = new ArrayList<>();
 
         for (String str : listAllData) {
-            if(ValidatorString.checkValid(str)) {
+            if(Validator.checkValid(str)) {
                 List<Double> dataOneString = ParserDouble.parse(str);
                 listData.addAll(dataOneString);
             }

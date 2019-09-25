@@ -13,10 +13,9 @@ import java.util.stream.Stream;
 public class ReaderData {
 
     public static List<String> read(String path) throws PathFileIsNullHandlerException,
-                                                        FileNotExistHandlerException,
-                                                        IOException {
+                                                        FileNotExistHandlerException {
         if (path == null) {
-            throw new PathFileIsNullHandlerException();
+            throw new PathFileIsNullHandlerException("Path is null");
         }
 
         File file = new File(path);
@@ -24,12 +23,17 @@ public class ReaderData {
         if (file.exists() & file.isFile()) {
             String absolutePathPath = file.getAbsolutePath();
 
-            Stream<String> lineStream = Files.lines(Paths.get(absolutePathPath));
+            Stream<String> lineStream = null;
+            try {
+                lineStream = Files.lines(Paths.get(absolutePathPath));
+            } catch (IOException e) {
+                throw new FileNotExistHandlerException(e);
+            }
             List<String> lines = lineStream.collect(Collectors.toList());
 
             return lines;
         } else {
-            throw new FileNotExistHandlerException();
+            throw new FileNotExistHandlerException("File not exist");
         }
     }
 }

@@ -1,9 +1,23 @@
 package com.epam.project.task01.exception;
 
 public class ArrayIsNullHandlerException extends RuntimeException {
-    private static final String MESSAGE = "Object 'array' is null";
-
     public ArrayIsNullHandlerException() {
-        super(MESSAGE);
     }
+
+    public ArrayIsNullHandlerException(String message) {
+        super(message);
+    }
+
+    public ArrayIsNullHandlerException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public ArrayIsNullHandlerException(Throwable cause) {
+        super(cause);
+    }
+
+    public ArrayIsNullHandlerException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+
 }

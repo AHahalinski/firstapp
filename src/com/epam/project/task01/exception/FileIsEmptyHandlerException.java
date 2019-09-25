@@ -1,10 +1,22 @@
 package com.epam.project.task01.exception;
 
 public class FileIsEmptyHandlerException extends RuntimeException {
-
-    private static final String MESSAGE = "File is empty";
-
     public FileIsEmptyHandlerException() {
-        super(MESSAGE);
+    }
+
+    public FileIsEmptyHandlerException(String message) {
+        super(message);
+    }
+
+    public FileIsEmptyHandlerException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public FileIsEmptyHandlerException(Throwable cause) {
+        super(cause);
+    }
+
+    public FileIsEmptyHandlerException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
     }
 }

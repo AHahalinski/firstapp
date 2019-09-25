@@ -1,8 +1,8 @@
 package com.epam.project.task01;
 
 import com.epam.project.task01.creater.CreaterArray;
-import com.epam.project.task01.utils.ArrayStatisticStream;
-import com.epam.project.task01.utils.ArrayUtil;
+import com.epam.project.task01.util.ArrayStatisticStream;
+import com.epam.project.task01.util.ArrayUtil;
 
 import java.util.Arrays;
 

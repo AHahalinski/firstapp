@@ -1,4 +1,4 @@
-package com.epam.project.task01.exception_handler;
+package com.epam.project.task01.exception;
 
 public class PathFileIsNullHandlerException extends RuntimeException {
 

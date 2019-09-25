@@ -1,8 +1,8 @@
 package com.epam.project.task01.creater;
 
-import com.epam.project.task01.exception_handler.FileIsEmptyHandlerException;
-import com.epam.project.task01.exception_handler.FileNotExistHandlerException;
-import com.epam.project.task01.exception_handler.PathFileIsNullHandlerException;
+import com.epam.project.task01.exception.FileIsEmptyHandlerException;
+import com.epam.project.task01.exception.FileNotExistHandlerException;
+import com.epam.project.task01.exception.PathFileIsNullHandlerException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

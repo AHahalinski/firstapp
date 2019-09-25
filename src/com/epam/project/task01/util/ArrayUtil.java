@@ -1,9 +1,13 @@
-package com.epam.project.task01.utils;
+package com.epam.project.task01.util;
 
+
+import com.epam.project.task01.exception.ArrayIsNullHandlerException;
 
 public class ArrayUtil {
 
-    public static double findMin(double[] array) {
+    public static double findMin(double[] array)  {
+        checkNull(array);
+
         double minElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -15,6 +19,8 @@ public class ArrayUtil {
     }
 
     public static double findMax(double[] array) {
+        checkNull(array);
+
         double maxElementArray = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -26,6 +32,8 @@ public class ArrayUtil {
     }
 
     public static double sum(double[] array) {
+        checkNull(array);
+
         double sum = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -35,6 +43,8 @@ public class ArrayUtil {
     }
 
     public static double average(double[] array) {
+        checkNull(array);
+
         double value;
 
         int size = array.length;
@@ -44,9 +54,7 @@ public class ArrayUtil {
     }
 
     public static double[] replace(double[] array, double value) {
-        if(array == null) {
-            return null;
-        }
+        checkNull(array);
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] < value) {
@@ -57,9 +65,7 @@ public class ArrayUtil {
     }
 
     public static double[] sortBubble(double[] array) {
-        if(array == null) {
-            return null;
-        }
+        checkNull(array);
 
         boolean isSorted = false;
         double temp;
@@ -78,9 +84,7 @@ public class ArrayUtil {
     }
 
     public static double[] sortShell(double[] array) {
-        if(array == null) {
-            return null;
-        }
+        checkNull(array);
 
         double temp;
 
@@ -100,9 +104,8 @@ public class ArrayUtil {
     }
 
     public static double[] sortMerge(double[] array) {
-        if (array == null) {
-            return null;
-        }
+        checkNull(array);
+
         if (array.length == 1) {
             return array;
         }
@@ -144,6 +147,12 @@ public class ArrayUtil {
             arrayMarge[i++] = arrayB[indexArrayB++];
         }
         return arrayMarge;
+    }
+
+    static void checkNull(double[] array) throws ArrayIsNullHandlerException{
+        if (array == null) {
+            throw new ArrayIsNullHandlerException();
+        }
     }
 
 }

@@ -1,10 +1,9 @@
-package com.epam.project.task01.utils;
+package com.epam.project.task01.util;
 
+import com.epam.project.task01.exception.ArrayIsNullHandlerException;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class ArrayUtilTest {
 
@@ -26,21 +25,11 @@ public class ArrayUtilTest {
         Assert.assertEquals(actualMin, expectedMin);
     }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void testFindMinNullPointerException() {
-        ARRAY_UTIL.findMin(null);
-    }
-
     @Test(dataProvider = "arrayTest")
     public void testFindMax(double[] array, double expectedMax, double expectedMin,
                             double expectedSum, double expectedAverage, double[] expectedSortedArray) {
         double actualMax = ARRAY_UTIL.findMax(array);
         Assert.assertEquals(actualMax, expectedMax);
-    }
-
-    @Test(expectedExceptions = NullPointerException.class)
-    public void testFindMaxNullPointerException() {
-        ARRAY_UTIL.findMax(null);
     }
 
     @Test(dataProvider = "arrayTest")
@@ -50,11 +39,6 @@ public class ArrayUtilTest {
         Assert.assertEquals(actualSum, expectedSum, 0.001);
     }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void testSumNullPointerException() {
-        ARRAY_UTIL.sum(null);
-    }
-
     @Test(dataProvider = "arrayTest")
     public void testAverage(double[] array, double expectedMax, double expectedMin,
                             double expectedSum, double expectedAverage, double[] expectedSortedArray) {
@@ -62,10 +46,6 @@ public class ArrayUtilTest {
         Assert.assertEquals(actualAverage, expectedAverage, 0.001);
     }
 
-    @Test(expectedExceptions = NullPointerException.class)
-    public void testAverageNullPointerException() {
-        ARRAY_UTIL.average(null);
-    }
 
     @Test
     public void testReplace() {
@@ -94,5 +74,10 @@ public class ArrayUtilTest {
                               double expectedSum, double expectedAverage, double[] expectedSortedArray) {
         double[] actualArraySorted = ArrayUtil.sortMerge(array);
         Assert.assertEquals(actualArraySorted, expectedSortedArray);
+    }
+
+    @Test(expectedExceptions = ArrayIsNullHandlerException.class)
+    public void testCheckNullThrowException() {
+        ARRAY_UTIL.checkNull(null);
     }
 }

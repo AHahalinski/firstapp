@@ -3,12 +3,11 @@ package com.epam.project.task01.creater;
 import com.epam.project.task01.parser.ParserDouble;
 import com.epam.project.task01.reader.ReaderData;
 import com.epam.project.task01.validator.ValidatorString;
-import com.epam.project.task01.exception_handler.FileNotExistHandlerException;
-import com.epam.project.task01.exception_handler.FileIsEmptyHandlerException;
+import com.epam.project.task01.exception.FileNotExistHandlerException;
+import com.epam.project.task01.exception.FileIsEmptyHandlerException;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class CreaterArray {
 

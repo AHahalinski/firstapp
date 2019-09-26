@@ -2,7 +2,7 @@ package com.epam.project.task01.validator;
 
 public class Validator {
 
-    private static final String REGEX = "^([+-]?\\d+(\\.\\d+)?(d|D)?([ ]+|$))+$";
+    private static final String REGEX = "^([+-]?\\d+(\\.\\d+)?(d|D)?(\\s+|$))+$";
 
     public static boolean checkValid(String string) {
 

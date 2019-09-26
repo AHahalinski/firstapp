@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class ParserDouble {
 
     public static List<Double> parse(String string) {
-        String[] split = string.split(" ");
+        String[] split = string.split("\\s+");
 
         List<Double> listData = Arrays.stream(split)
                 .map(element -> Double.parseDouble(element))
